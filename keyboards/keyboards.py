@@ -25,6 +25,10 @@ prices_kb = InlineKeyboardMarkup()
 #     prices_kb.add(inline_btn)
 prices_kb.add(back_to_menu_btn)
 
+# Клавиатура доставки
+delivery_kb = InlineKeyboardMarkup()
+delivery_kb.add(back_to_menu_btn)
+
 
 # Клавиатура контактов
 
@@ -40,7 +44,7 @@ contacts_kb.add(back_to_menu_btn)
 info_kb = InlineKeyboardMarkup()
 info_kb.add(back_to_menu_btn)
 
-# Клавиатура информации
+# 
 
 check_sub_kb = InlineKeyboardMarkup()
 
