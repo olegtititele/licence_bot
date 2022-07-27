@@ -121,7 +121,23 @@ async def call_back(call: types.CallbackQuery):
                 reply_markup=keyboards.prices_kb
             )
 
-        
+        elif call.data == "delivery":
+			text = "<b>ДОСТАВКА 🚚</b>\n\nНемного расскажем как происходит доставка. Отправка происходит с помощью Почты России 1 класса. Сроки занимают примерно от 2 до 5 дней(зависит от города). Конкретное время доставки в ваш город можно будет узнать во время оформлении заказа."
+
+            file = InputMedia(media=InputFile(cf.delivery_photo))
+            await bot.edit_message_media(
+                chat_id=call.from_user.id,
+                message_id=call.message.message_id,
+                media=file
+            )
+            await bot.edit_message_caption(
+                chat_id=call.from_user.id,
+                message_id=call.message.message_id,
+                caption=text,
+                parse_mode=ParseMode.HTML,
+                reply_markup=keyboards.delivery_kb
+            )
+			
         elif call.data == "contacts":
             file = InputMedia(media=InputFile(cf.contacts_photo))
             await bot.edit_message_media(
