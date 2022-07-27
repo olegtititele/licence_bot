@@ -4,7 +4,7 @@ import psycopg2
 class DB():
 
     def __init__(self):
-        self.connection = psycopg2.connect(host='localhost', user='postgres', password='admin1305', database='LicenceBot')
+        self.connection = psycopg2.connect(host='195.2.76.175', user='postgres', password='admin1305.', database='LicenceBot')
 
     def create_users_table(self):
         cursor = self.connection.cursor()
