@@ -10,10 +10,11 @@ back_to_menu_btn = InlineKeyboardButton("🔙 Назад", callback_data="back_t
 
 # Клавиатура главного меню
 prices_btn = InlineKeyboardButton('Цена', callback_data='prices')
+delivery_btn = InlineKeyboardButton('Доставка', callback_data='delivery')
 contacts_btn = InlineKeyboardButton('Контакты', callback_data='contacts')
 info_btn = InlineKeyboardButton('Info', callback_data='info')
 menu_kb = InlineKeyboardMarkup()
-menu_kb.add(prices_btn)
+menu_kb.add(prices_btn, delivery_btn)
 menu_kb.add(contacts_btn, info_btn)
 
 
