@@ -123,7 +123,6 @@ async def call_back(call: types.CallbackQuery):
 
         
         elif call.data == "contacts":
-		
 			file = InputMedia(media=InputFile(cf.contacts_photo))
             await bot.edit_message_media(
                 chat_id=call.from_user.id,
