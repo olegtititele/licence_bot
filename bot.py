@@ -119,7 +119,7 @@ async def call_back(call: types.CallbackQuery):
 #                 caption=text,
 # 		parse_mode=ParseMode.HTML,
 #                 reply_markup=keyboards.prices_kb
-            )
+#             )
             file = InputMedia(media=InputFile(cf.price_photo))
             await bot.edit_message_media(
                 chat_id=call.from_user.id,
