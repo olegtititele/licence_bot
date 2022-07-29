@@ -12,6 +12,8 @@ contacts_photo = "contacts_menu.jpg"
 
 delivery_photo = "delivery_photo.jpg"
 
+price_video = "price_video.MOV"
+
 channel_chat_id = -1001253358959 # Чат id канала
 
 admins_chat_id = [2029023685, 5526362690, 5179191194]
