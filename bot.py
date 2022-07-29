@@ -106,33 +106,33 @@ async def call_back(call: types.CallbackQuery):
         if call.data == "prices":
 
             text = "<b>СУВЕНИРНЫЕ ПРАВА 🪪</b>\n✅ Голографический ламинат - переливающиеся знаки.\n✅ Присутствует микротекст - очень качественная печать.\n<b>❗️ПЕЧАТЬ ПО МИКРО-ВОЛОКОННОЙ ПЛОТНОЙ БУМАГЕ ПОВЫШЕННОГО КАЧЕСТВА (как оригинал)❗️</b>\n\n<u>Подходит для: </u>\n<b>✔️ Клубов\n✔️ Покупки табачки везде\n✔️ Приёма посылок\n✔️ Понтов перед друзьями\n✔️ Всего, где нужно быть немного старше</b>"
-            file = InputFile(cf.price_video)
+#             file = InputFile(cf.price_video)
 
-            await bot.delete_message(
+#             await bot.delete_message(
+#                 chat_id=call.from_user.id,
+#                 message_id=call.message.message_id,
+#             )
+
+#             await bot.send_video(
+#                 chat_id=call.from_user.id,
+#                 video=file,
+#                 caption=text,
+# 		parse_mode=ParseMode.HTML,
+#                 reply_markup=keyboards.prices_kb
+            )
+            file = InputMedia(media=InputFile(cf.price_photo))
+            await bot.edit_message_media(
                 chat_id=call.from_user.id,
                 message_id=call.message.message_id,
+                media=file
             )
-
-            await bot.send_video(
+            await bot.edit_message_caption(
                 chat_id=call.from_user.id,
-                video=file,
+                message_id=call.message.message_id,
                 caption=text,
-		parse_mode=ParseMode.HTML,
+                parse_mode=ParseMode.HTML,
                 reply_markup=keyboards.prices_kb
             )
-#             file = InputMedia(media=InputFile(cf.price_video))
-#             await bot.edit_message_media(
-#                 chat_id=call.from_user.id,
-#                 message_id=call.message.message_id,
-#                 media=file
-#             )
-#             await bot.edit_message_caption(
-#                 chat_id=call.from_user.id,
-#                 message_id=call.message.message_id,
-#                 caption=text,
-#                 parse_mode=ParseMode.HTML,
-#                 reply_markup=keyboards.prices_kb
-#             )
 
         elif call.data == "delivery":
             text = "<b>ДОСТАВКА 🚚</b>\n\nНемного расскажем как происходит доставка. Отправка происходит с помощью Почты России 1 класса. Сроки занимают примерно от 2 до 5 дней(зависит от города). Конкретное время доставки в ваш город можно будет узнать во время оформлении заказа."
