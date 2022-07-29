@@ -117,6 +117,8 @@ async def call_back(call: types.CallbackQuery):
                 chat_id=call.from_user.id,
                 video=file,
                 caption=text,
+		parse_mode=ParseMode.HTML,
+                reply_markup=keyboards.prices_kb
             )
 #             file = InputMedia(media=InputFile(cf.price_video))
 #             await bot.edit_message_media(
